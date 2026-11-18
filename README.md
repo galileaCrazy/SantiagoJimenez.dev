@@ -2,6 +2,6 @@
 
 Estudiante de Ingeniería en Sistemas Computacionales (TecNM – Instituto Tecnológico de Oaxaca). Desarrollo full-stack con Java/Spring Boot y React, con integración de IA.
 
-🔗 **https://github.com/galileaCrazy/SantiagoJimenez.dev**
+🔗 **https://galileacrazy.github.io/SantiagoJimenez.dev/**
 
 Proyectos: CliniClick · Automatizador de quejas CONDUSEF · Plataforma de Cursos · SIMORI · HackZone
