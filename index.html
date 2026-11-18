@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Galilea Santiago | Portafolio</title>
+<meta name="description" content="Portafolio de Galilea Santiago Jiménez, estudiante de Ingeniería en Sistemas Computacionales (TecNM ITO). Desarrollo full-stack con Java/Spring Boot, React e IA."/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Galilea Santiago Jiménez · Portafolio"/>
+<meta property="og:description" content="Full-stack Java/Spring Boot + React con IA. CliniClick, automatización con OCR, SIMORI y más."/>
+<meta property="og:url" content="https://galileacrazy.github.io/"/>
+<meta property="og:image" content="https://galileacrazy.github.io/assets/img/og.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="assets/img/galilea-avatar.jpg"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&amp;family=Plus+Jakarta+Sans:wght@400;500;700&amp;family=Rubik:wght@600;700;800;900&amp;family=Space+Grotesk:wght@500;700&amp;family=VT323&amp;family=Syne:wght@700;800&amp;family=Fredoka:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+@layer base{
+  html,body{margin:0;padding:0;}
+  body{overscroll-behavior:none;}
+  /* Fixed header is 80px tall: leave room so section titles aren't hidden under it */
+  html{scroll-behavior:smooth;scroll-padding-top:110px;}
+  main>:first-child{margin-top:0!important;}
+  main>:last-child{margin-bottom:0!important;}
+}
+::-webkit-scrollbar{display:none;}
+
+/* Y2K Graphic Utilities & Textures */
+.y2k-bubble-text {
+  text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, 4px 4px 0px #000, 7px 7px 0px #e21c70;
+}
+.y2k-bubble-text-sm {
+  -webkit-text-stroke: 3px #e21c70;
+  paint-order: stroke fill;
+  text-shadow: 3px 3px 0px #e21c70, 5px 5px 0px #e21c70;
+}
+.checkerboard-strip {
+  background: repeating-conic-gradient(#000 0% 25%, #fff 0% 50%) 50% / 16px 16px;
+}
+.checkerboard-strip-pink {
+  background: repeating-conic-gradient(#e21c70 0% 25%, #000 0% 50%) 50% / 16px 16px;
+}
+.washi-tape {
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  backdrop-filter: blur(1px);
+}
+.washi-tape-pink {
+  background: rgba(249, 102, 171, 0.75);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  backdrop-filter: blur(1px);
+}
+.y2k-btn {
+  box-shadow: 4px 4px 0px #000000, 6px 6px 0px #e21c70;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.y2k-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000000, 3px 3px 0px #e21c70;
+}
+.y2k-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px #000;
+}
+.sticker-item {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s;
+}
+.sticker-item:hover {
+  transform: scale(1.1) rotate(0deg) !important;
+  z-index: 30;
+  box-shadow: 0 0 15px rgba(226, 28, 112, 0.7), 4px 4px 0px #000 !important;
+}
+
+/* Habilidades: filter buttons + skill cards */
+.skill-filter {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  padding: 0.4rem 1rem;
+  background: #171935; color: #ffb1c3;
+  border: 3px solid #fff; border-radius: 9999px;
+  font-family: Fredoka, Bungee, sans-serif; font-weight: 700; font-size: 0.85rem; text-transform: uppercase;
+  box-shadow: 3px 3px 0px #000;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.skill-filter .material-symbols-outlined { font-size: 1.1rem; }
+.skill-filter:nth-child(odd) { transform: rotate(-2deg); }
+.skill-filter:nth-child(even) { transform: rotate(2deg); }
+.skill-filter:hover { transform: rotate(0) scale(1.06); color: #fff; box-shadow: 0 0 12px rgba(226, 28, 112, 0.6), 3px 3px 0px #000; }
+.skill-filter.is-active { background: #e21c70; color: #fff; box-shadow: 3px 3px 0px #000, 5px 5px 0px #f966ab; transform: rotate(0); }
+.skill-card {
+  background: #0e102c;
+  border: 2px solid #fff; border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 4px 4px 0px #000;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s;
+  animation: skillPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.skill-card:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px #000, 8px 8px 0px var(--skill-color); }
+.skill-icon {
+  width: 2.75rem; height: 2.75rem; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: #fff; color: #000;
+  border: 2px solid #000; border-radius: 0.5rem;
+  box-shadow: 2px 2px 0px var(--skill-color);
+  font-size: 1.6rem;
+  transform: rotate(-4deg);
+}
+.skill-icon .material-symbols-outlined { font-size: 1.6rem; color: #e21c70; }
+.skill-bar-fill { width: 0; transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+@keyframes skillPop {
+  from { opacity: 0; transform: scale(0.9) rotate(-2deg); }
+  to { opacity: 1; transform: scale(1) rotate(0); }
+}
+</style>
+<link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-bright":"#353754","inverse-primary":"#bb0059","tertiary-fixed":"#ffd9de","outline-variant":"#5a3f46","secondary-container":"#8f0657","surface-container-lowest":"#090b27","primary-fixed-dim":"#ffb1c3","on-primary-fixed":"#3f0019","on-secondary-fixed":"#3e0022","background":"#0e102c","on-secondary":"#63003a","on-error":"#690005","primary-fixed":"#ffd9e0","on-error-container":"#ffdad6","on-primary-fixed-variant":"#8f0042","surface-container-highest":"#303250","error":"#ffb4ab","on-tertiary":"#660027","on-secondary-container":"#ff99c3","inverse-on-surface":"#2c2e4b","on-surface-variant":"#e2bdc4","primary-container":"#e21c70","on-primary-container":"#ffffff","on-background":"#e0e0ff","secondary-fixed-dim":"#ffb0ce","outline":"#aa888f","on-tertiary-fixed":"#3f0015","surface-container-low":"#171935","inverse-surface":"#e0e0ff","surface-variant":"#303250","error-container":"#93000a","on-secondary-fixed-variant":"#8c0254","tertiary":"#ffb2bf","tertiary-fixed-dim":"#ffb2bf","on-tertiary-fixed-variant":"#90003a","primary":"#ffb1c3","surface-dim":"#0e102c","surface-tint":"#ffb1c3","on-tertiary-container":"#ffffff","surface-container":"#1b1d39","tertiary-container":"#d93466","on-surface":"#e0e0ff","secondary-fixed":"#ffd9e5","surface-container-high":"#252744","surface":"#0e102c","secondary":"#ffb0ce","on-primary":"#66002d"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-lg":"1.5rem","margin-mobile":"1rem","space-md":"1rem","space-xl":"2.5rem","space-sm":"0.5rem","gutter-mobile":"0.75rem",margin:"2rem",gutter:"1.25rem","space-xs":"0.25rem"},fontFamily:{"bubble":["Fredoka","Bungee","sans-serif"],"cyber":["Syne","Space Grotesk","sans-serif"],"pixel":["VT323","monospace"],"label-md":["Rubik"],"display-hero-mobile":["Rubik"],"label-caps":["Rubik"],"headline-sm":["Rubik"],"headline-lg-mobile":["Rubik"],"headline-md":["Rubik"],"body-lg":["Plus Jakarta Sans"],"headline-lg":["Rubik"],"body-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"display-hero":["Rubik"]},fontSize:{"label-md":["13px",{lineHeight:"16px",fontWeight:"600"}],"display-hero-mobile":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"900"}],"label-caps":["11px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"800"}],"headline-sm":["18px",{lineHeight:"24px",fontWeight:"700"}],"headline-lg-mobile":["26px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"800"}],"headline-md":["22px",{lineHeight:"28px",fontWeight:"700"}],"body-lg":["16px",{lineHeight:"26px",fontWeight:"500"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"800"}],"body-md":["14px",{lineHeight:"22px",fontWeight:"400"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}],"display-hero":["56px",{lineHeight:"64px",letterSpacing:"-0.03em",fontWeight:"900"}]}}}}</script></head>
+<body class="bg-surface text-on-surface font-body-md text-body-md antialiased selection:bg-primary-container selection:text-on-primary-container relative overflow-x-hidden" style="background-color: #080918;">
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#0e102c]/90 backdrop-blur-md border-b-2 border-primary-container/40 shadow-[0_4px_12px_rgba(0,0,0,0.5)]"><div class="h-20 max-w-[1280px] mx-auto px-margin flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md"><a class="inline-flex items-center gap-space-sm bg-primary-container text-on-primary-container px-space-md py-space-xs rounded font-bubble border-2 border-white shadow-[3px_3px_0px_#000000] rotate-[-2deg] hover:rotate-0 transition-transform whitespace-nowrap shrink-0" data-path="sobre-mi" href="#"><span class="text-white text-lg">★</span><span class="font-bubble tracking-wider uppercase text-sm">PORTAFOLIO</span><span class="text-white text-lg">★</span></a><div class="hidden sm:inline-flex items-center gap-space-sm whitespace-nowrap shrink-0 bg-[#171935] px-space-md py-1.5 rounded-full border-2 border-white shadow-[3px_3px_0px_#000,4px_4px_0px_#e21c70] rotate-[2deg] hover:rotate-0 transition-transform"><span class="relative flex w-2.5 h-2.5"><span class="absolute inline-flex w-full h-full rounded-full bg-[#f966ab] animate-ping"></span><span class="relative inline-flex w-2.5 h-2.5 rounded-full bg-[#FF1493]"></span></span><span class="font-pixel text-lg leading-none text-primary uppercase tracking-widest">Busco residencia ✦</span></div></div><nav class="hidden xl:flex items-center gap-1 p-space-xs whitespace-nowrap shrink-0 bg-[#171935] rounded-xl border border-white/20 shadow-[3px_3px_0px_#000]" data-active-classes="bg-primary-container text-on-primary-container rounded shadow-[2px_2px_0px_#8f0657] font-bold"><a class="px-3 py-space-xs rounded font-label-md text-label-md uppercase whitespace-nowrap text-on-surface-variant hover:text-white hover:bg-primary-container hover:shadow-[2px_2px_0px_#000] transition-all" data-path="sobre-mi" href="#">Sobre Mí</a><a class="px-3 py-space-xs rounded font-label-md text-label-md uppercase whitespace-nowrap text-on-surface-variant hover:text-white hover:bg-primary-container hover:shadow-[2px_2px_0px_#000] transition-all" data-path="skills" href="#skills">Skills</a><a class="px-3 py-space-xs rounded font-label-md text-label-md uppercase whitespace-nowrap text-on-surface-variant hover:text-white hover:bg-primary-container hover:shadow-[2px_2px_0px_#000] transition-all" data-path="educacion" href="#educacion">Educación</a><a class="px-3 py-space-xs rounded font-label-md text-label-md uppercase whitespace-nowrap text-on-surface-variant hover:text-white hover:bg-primary-container hover:shadow-[2px_2px_0px_#000] transition-all" data-path="proyectos" href="#proyectos">Proyectos</a><a class="px-3 py-space-xs rounded font-label-md text-label-md uppercase whitespace-nowrap text-on-surface-variant hover:text-white hover:bg-primary-container hover:shadow-[2px_2px_0px_#000] transition-all" data-path="experiencia" href="#experiencia">Experiencia</a><a class="px-3 py-space-xs rounded font-label-md text-label-md uppercase whitespace-nowrap text-on-surface-variant hover:text-white hover:bg-primary-container hover:shadow-[2px_2px_0px_#000] transition-all" data-path="contacto" href="#contacto">Contacto</a></nav><div class="flex items-center gap-space-md shrink-0"><a class="inline-flex items-center justify-center whitespace-nowrap bg-secondary-container text-on-secondary-container hover:bg-primary-container hover:text-white px-space-md py-1.5 rounded-lg font-bubble text-sm uppercase border-2 border-white shadow-[4px_4px_0px_#000000,5px_5px_0px_#e21c70] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all rotate-[1.5deg]" data-hire="1" data-path="contacto" href="#contacto">¡CONTRÁTAME! ★</a><div class="relative"><img alt="Galilea Santiago" class="w-9 h-9 rounded-full object-cover border-2 border-white shadow-[2px_2px_0px_#e21c70]" src="assets/img/galilea-avatar.jpg"/><span class="absolute -bottom-1 -right-1 text-xs">✨</span></div></div></div></header>
+<main class="w-full pt-24 bg-[#080918] min-h-[calc(100vh-140px)] relative overflow-hidden" style="background-color: #080918;"><div class="flex flex-col w-full">
+<!-- MAIN WRAPPER CONTAINER -->
+<div class="max-w-[1280px] w-full mx-auto px-margin py-space-xl flex flex-col gap-space-xl text-on-surface relative">
+<!-- Decorative Y2K Floating Decals -->
+<div class="absolute -top-6 right-8 text-secondary select-none pointer-events-none text-4xl opacity-80 animate-pulse">✦</div>
+<div class="absolute top-1/3 -left-4 text-primary-container select-none pointer-events-none text-5xl font-bubble opacity-40 rotate-12">★</div>
+<!-- 1. HERO / SOBRE MÍ SECTION (Bento Layout Inspired by Reference) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-stretch relative" id="sobre-mi">
+<!-- Left Column: Profile Card + Contact Chips -->
+<div class="lg:col-span-4 flex flex-col gap-gutter justify-between">
+<!-- Profile Identity Card (Polaroid Sticker Styling) -->
+<div class="bg-[#141416] rounded-2xl p-space-lg border-2 border-white shadow-[6px_6px_0px_#000000,8px_8px_0px_#e21c70] flex flex-col justify-between relative overflow-visible rotate-[-1deg]">
+<!-- Top Washi Tape Deco -->
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 washi-tape-pink w-28 h-6 rotate-[-2deg] border border-white/60 z-20"></div>
+<div class="flex items-start justify-between gap-space-sm mb-space-md pt-2">
+<span class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-caps text-label-caps uppercase border border-white/40 shadow-[2px_2px_0px_#000]">
+<span class="text-primary font-bold">★</span> ING. EN SISTEMAS
+</span>
+<div class="w-9 h-9 rounded-full bg-primary-container border-2 border-white flex items-center justify-center text-on-primary-container font-headline-sm text-headline-sm shadow-[2px_2px_0px_#000] rotate-6">
+  ♥
+</div>
+</div>
+<!-- Profile photo breakout polaroid -->
+<div class="flex items-center gap-space-md mb-space-md">
+<div class="relative -mt-2 -ml-2 w-40 h-40 rounded-2xl overflow-hidden bg-white p-2 border-2 border-black shadow-[4px_4px_0px_#e21c70] shrink-0 rotate-[-4deg] hover:rotate-0 transition-transform">
+<img class="w-full h-full object-cover rounded-xl" alt="Retrato de Galilea Santiago Jiménez" src="assets/img/galilea.jpg"/>
+<div class="absolute -bottom-1 -right-1 text-xs">💖</div>
+</div>
+<div class="flex flex-col">
+<span class="font-bubble text-2xl text-primary leading-tight tracking-wide text-shadow-[2px_2px_0px_#000]">Galilea Santiago Jimenez</span>
+<span class="font-pixel text-lg text-secondary mt-1.5 tracking-widest">✦ Oaxaca, MX ✦</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed bg-[#0e102c]/70 p-3 rounded-lg border border-white/10">
+  Me apunto a hackatones si me invitan. Pinto lo que veo, patino por diversión y lidero proyectos cuando hace falta; si alguien más toma la batuta, sumo con todo. Estudio Ingeniería en Sistemas y me gusta aprender cosas nuevas siempre, porque sé que muchas mujeres lucharon para que yo pudiera estar aquí.
+</p>
+<!-- Quick Connect Chips Grid (Sticker-bomb style) -->
+<div class="grid grid-cols-2 gap-space-xs pt-space-sm">
+<a class="flex items-center gap-space-xs px-space-sm py-space-xs bg-[#1f2142] hover:bg-primary-container text-white rounded font-cyber text-xs uppercase border-2 border-white shadow-[3px_3px_0px_#000] rotate-[-1.5deg] hover:rotate-0 transition-all" href="mailto:galileasantiagojimenez20@gmail.com">
+<span class="material-symbols-outlined text-sm">mail</span>
+<span class="truncate font-bold">Email Me</span>
+</a>
+<a class="flex items-center gap-space-xs px-space-sm py-space-xs bg-[#1f2142] hover:bg-primary-container text-white rounded font-cyber text-xs uppercase border-2 border-white shadow-[3px_3px_0px_#000] rotate-[2deg] hover:rotate-0 transition-all" href="https://github.com/galileaCrazy" target="_blank">
+<span class="material-symbols-outlined text-sm">code</span>
+<span class="truncate font-bold">GitHub</span>
+</a>
+<a class="flex items-center gap-space-xs px-space-sm py-space-xs bg-[#1f2142] hover:bg-primary-container text-white rounded font-cyber text-xs uppercase border-2 border-white shadow-[3px_3px_0px_#000] rotate-[1.5deg] hover:rotate-0 transition-all" href="https://www.linkedin.com/in/santiago-jimenez-galilea-a565742b8" target="_blank">
+<span class="material-symbols-outlined text-sm">link</span>
+<span class="truncate font-bold">LinkedIn</span>
+</a>
+<a class="flex items-center gap-space-xs px-space-sm py-space-xs bg-[#1f2142] hover:bg-primary-container text-white rounded font-cyber text-xs uppercase border-2 border-white shadow-[3px_3px_0px_#000] rotate-[-2deg] hover:rotate-0 transition-all" href="https://instagram.com/galilea_crazy" target="_blank">
+<span class="font-bold text-secondary">IG</span>
+<span class="truncate font-bold">@galilea_crazy</span>
+</a>
+</div>
+</div>
+<!-- Metric Sticker Card (Punk Ticket) -->
+<div class="bg-[#1b1d39] rounded-2xl p-space-md border-2 border-white shadow-[5px_5px_0px_#000000,7px_7px_0px_#e21c70] flex items-center justify-between relative overflow-hidden rotate-[1.5deg]">
+<div class="absolute -right-6 -bottom-6 text-7xl font-bubble text-white/5 pointer-events-none select-none">Y2K</div>
+<div class="flex flex-col">
+<span class="font-cyber font-bold text-xs uppercase text-secondary tracking-wider">Generación</span>
+<span class="font-bubble text-2xl sm:text-3xl text-primary leading-none mt-1">★ 2022–27</span>
+</div>
+<div class="h-10 w-0.5 bg-gradient-to-b from-[#FF1493] via-white to-[#FF1493] opacity-70"></div>
+<div class="flex flex-col text-right">
+<span class="font-cyber font-bold text-xs uppercase text-secondary tracking-wider">Hackatones</span>
+<span class="font-bubble text-2xl sm:text-3xl text-primary leading-none mt-1">2 ✦</span>
+</div>
+</div>
+</div>
+<!-- Right Column: "HOLA MUNDO!" Y2K Feature Card (with Star Background & Doll Sticker) -->
+<div class="lg:col-span-8 relative bg-[#171935] rounded-2xl overflow-visible border-3 border-white shadow-[7px_7px_0px_#000000,10px_10px_0px_#e21c70] flex flex-col justify-between" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBKWmjgMlsxMcxXUVQpO0Bu-2XW4T7yQ7R5VCKnDwfL0zMhpX14ZxTJb6vyOyCkzM-dOIWyUpSaX67L146XIy52SPgBnwZnpQHf192jGYI3SPFkHOL8e781Okt53PigRRGNxNgtPqAbVvnkbEMfmKx5M7toVCJeX3Gge5YKQbK0STh6WdNvu3qqh59gUaNcFKAEHkzG8KDZ-g0InY7sQbFlg-1Dg8RQwTUl6-wQLnTcZYxsUHqEdIiuX6b3I0ipFr_Fo30'); background-size: cover; background-position: center center;">
+<!-- Flat Solid/Translucent Overlay for contrast & Cyberpop punch -->
+<div class="absolute inset-0 bg-[#0e102c]/80 pointer-events-none rounded-2xl"></div>
+<!-- Top edge washi tape decoration -->
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-white via-[#FF1493] to-[#FF69B4] opacity-90 z-20 rounded-t-2xl shadow-[0_0_8px_#FF1493]"></div>
+<!-- Overlapping Y2K Doll Sticker in Top-Right Corner (Rotated & breaking boundaries) -->
+<div class="absolute -top-10 -right-6 sm:-top-12 sm:-right-8 md:-top-14 md:-right-6 z-30 w-36 sm:w-48 md:w-56 transform rotate-[5deg] hover:rotate-0 transition-transform duration-300 drop-shadow-[5px_5px_0px_#000000]">
+<img alt="Sticker" class="w-full h-auto object-contain filter" src="Sticker.png"/>
+</div>
+<!-- Inner Content -->
+<div class="relative z-10 p-space-lg sm:p-space-xl flex flex-col h-full justify-between gap-space-lg">
+<!-- Top Tag Bar -->
+<div class="flex items-center gap-space-sm flex-wrap pt-2">
+<span class="px-space-md py-1 bg-primary-container text-white font-bubble text-xs uppercase rounded-full border-2 border-white shadow-[3px_3px_0px_#000] rotate-[-2deg]">
+  ✦ LO QUE HAGO
+</span>
+<span class="px-space-sm py-1 bg-[#090b27] text-primary font-pixel text-lg uppercase rounded border border-primary/40 shadow-[2px_2px_0px_#000]">
+  INGENIERA EN CONSTRUCCIÓN
+</span>
+</div>
+<!-- Main Typographic Block with Bubble 2000s Header -->
+<div class="max-w-[540px]">
+<h1 class="font-bubble text-5xl sm:text-6xl md:text-7xl text-primary-container tracking-tight uppercase leading-[0.95] y2k-bubble-text mt-2 mb-3">
+  HOLA<br/>MUNDO!
+</h1>
+<p class="font-cyber font-extrabold text-base sm:text-lg text-[#ffd9e5] uppercase tracking-wider bg-black/60 inline-block px-2 py-1 rounded border-l-4 border-primary-container">
+  ★ Estudiante de Ingeniería en Sistemas Computacionales ★
+</p>
+<p class="font-body-lg text-body-lg text-[#e0e0ff] mt-space-md leading-relaxed font-medium bg-[#0e102c]/85 p-4 rounded-xl border-2 border-white/20 shadow-[4px_4px_0px_#000]">
+  Soy Galilea, estudiante de 9.º semestre de Ingeniería en Sistemas Computacionales en el TecNM Instituto Tecnológico de Oaxaca, con orientación full-stack: Java/Spring Boot y React, con integración de IA. Me gusta construir software que la gente use y entender cómo funciona todo por dentro. Creo que la creatividad y la tecnología no están peleadas, se complementan. Un buen sistema no solo funciona bien, también se siente bien. Y nada como una buena taza de café para acompañar horas de desarrollo.
+</p>
+<p class="font-body-md text-body-md text-on-surface-variant/90 mt-space-sm italic bg-black/40 px-3 py-1.5 rounded">
+  Recién salida del Hackatón Jalisco SOLACYT 2026, donde colaboré en SIMORI, un sistema de monitoreo renal infantil. Busco realizar mi residencia profesional en un equipo de desarrollo.
+</p>
+</div>
+<!-- Bottom Micro Action Strip with Y2K Neobrutalism CTAs -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-md">
+<a class="y2k-btn inline-flex items-center gap-space-xs bg-primary-container text-white px-space-lg py-3 rounded-xl font-bubble text-base uppercase border-2 border-white rotate-[-1deg]" href="#proyectos">
+<span>EXPLORAR ARCHIVO</span>
+<span class="text-lg font-bold">➔</span>
+</a>
+<a class="y2k-btn inline-flex items-center gap-space-xs bg-[#1b1d39] text-primary px-space-md py-3 rounded-xl font-bubble text-base uppercase border-2 border-white rotate-[1.5deg]" href="#contacto">
+<span>HABLEMOS!</span>
+<span class="text-white">★</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Divider 1 (after Hero, before Skills): Star on the right with glowing trail from the left -->
+<div class="w-full max-w-[1280px] mx-auto h-8 my-6 flex items-center justify-center relative overflow-visible select-none pointer-events-none">
+<svg class="w-full h-8 overflow-visible" fill="none" preserveaspectratio="none" viewbox="0 0 1200 40" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="trailGradLeft1" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#FF1493" stop-opacity="0.1"></stop>
+<stop offset="35%" stop-color="#FF69B4" stop-opacity="0.75"></stop>
+<stop offset="80%" stop-color="#FF1493" stop-opacity="1"></stop>
+<stop offset="100%" stop-color="#ffffff"></stop>
+</lineargradient>
+<filter height="180%" id="pinkGlowRight1" width="180%" x="-40%" y="-40%">
+<fedropshadow dx="0" dy="0" flood-color="#FF1493" flood-opacity="0.9" stddeviation="4"></fedropshadow>
+</filter>
+</defs>
+<path d="M 0 19.5 L 1162 17.5 L 1162 22.5 L 0 20.5 Z" fill="url(#trailGradLeft1)"></path>
+<g filter="url(#pinkGlowRight1)" transform="translate(1176, 20)">
+<path d="M 0 -15 L 4.2 -4.2 L 15.5 -3 L 7 5.2 L 9.8 15.8 L 0 9.2 L -9.8 15.8 L -7 5.2 L -15.5 -3 L -4.2 -4.2 Z" fill="#ffffff" stroke="#FF1493" stroke-linejoin="round" stroke-width="2.5"></path>
+<circle cx="0" cy="0" fill="#FF1493" r="3"></circle>
+</g>
+</svg>
+</div>
+<!-- SECTION 1 (AFTER HERO): HABILIDADES (filtrables) + EDUCACIÓN & IDIOMAS -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-stretch" id="skills">
+<!-- Habilidades Panel (full width, filtered by category buttons) -->
+<div class="lg:col-span-12 bg-[#141416] rounded-2xl p-space-lg border-2 border-white shadow-[5px_5px_0px_#000000,8px_8px_0px_#e21c70] relative">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="font-bubble text-xl text-primary animate-spin">★</span>
+<span class="font-cyber font-bold text-xs uppercase text-secondary tracking-wider">MIS SUPER PODERES</span>
+</div>
+<span class="font-pixel text-lg text-primary uppercase" id="skills-count">10 skills ✦</span>
+</div>
+<h3 class="font-bubble text-2xl sm:text-3xl uppercase text-white mb-space-lg y2k-bubble-text-sm">
+  HABILIDADES
+</h3>
+<!-- Filter Buttons -->
+<div class="flex flex-wrap gap-3 mb-space-lg" id="skills-filters">
+<button class="skill-filter is-active" data-filter="todas" type="button"><span class="material-symbols-outlined">star</span>Todas</button>
+<button class="skill-filter" data-filter="frontend" type="button"><span class="material-symbols-outlined">desktop_windows</span>Frontend</button>
+<button class="skill-filter" data-filter="backend" type="button"><span class="material-symbols-outlined">dns</span>Backend</button>
+<button class="skill-filter" data-filter="datos" type="button"><span class="material-symbols-outlined">database</span>Bases de Datos</button>
+<button class="skill-filter" data-filter="herramientas" type="button"><span class="material-symbols-outlined">construction</span>Herramientas</button>
+<button class="skill-filter" data-filter="soft" type="button"><span class="material-symbols-outlined">favorite</span>Soft Skills</button>
+</div>
+<!-- Skill Cards (rendered from the SKILLS list in the script at the bottom) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter" id="skills-grid"></div>
+</div>
+<!-- Educación Panel (Estudios) -->
+<div class="lg:col-span-7 bg-[#141416] rounded-2xl p-space-lg border-2 border-white shadow-[5px_5px_0px_#000000,8px_8px_0px_#e21c70] flex flex-col justify-between relative overflow-hidden" id="educacion">
+<div class="absolute -right-8 -top-8 w-24 h-24 bg-gradient-to-br from-pink-500/20 via-white/10 to-transparent rotate-12 pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-bubble text-lg text-primary">★</span>
+<span class="font-cyber font-bold text-xs uppercase text-secondary tracking-wider">FORMACIÓN ACADÉMICA</span>
+</div>
+<span class="px-space-xs py-0.5 bg-primary-container text-white font-bubble text-xs rounded border border-white shadow-[2px_2px_0px_#000]">
+  EN CURSO
+</span>
+</div>
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md">
+<div>
+<h3 class="font-bubble text-2xl uppercase text-white leading-tight y2k-bubble-text-sm">
+  ESTUDIOS UNIVERSITARIOS
+</h3>
+<p class="font-cyber font-bold text-base text-primary mt-1">
+  Ingeniería en Sistemas Computacionales
+</p>
+<p class="font-pixel text-lg text-secondary">
+  TecNM • Instituto Tecnológico de Oaxaca • 2022 / 2027
+</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant/90 mt-space-xs max-w-md">
+  Cursando el 9.º semestre · Especialidad: Desarrollo de Software con Tecnologías Actuales. Materias relevantes: Diseño e Implementación de Software con Patrones, Programación Web, Gestión de Proyectos de Software e Inteligencia Artificial.
+</p>
+</div>
+<!-- Graphic badge sticker -->
+<div class="w-18 h-18 rounded-2xl bg-white flex flex-col items-center justify-center p-3 border-2 border-black shadow-[4px_4px_0px_#e21c70] shrink-0 rotate-6 hover:rotate-0 transition-transform">
+<span class="material-symbols-outlined text-[#e21c70] text-3xl">school</span>
+<span class="font-bubble text-xs text-black uppercase">9.º SEM</span>
+</div>
+</div>
+</div>
+<!-- Idiomas Panel with Cyber Pop Progress Bars -->
+<div class="lg:col-span-5 bg-[#141416] rounded-2xl p-space-lg border-2 border-white shadow-[5px_5px_0px_#000000,8px_8px_0px_#e21c70]">
+<div class="flex items-center justify-between mb-space-md">
+<h3 class="font-bubble text-2xl uppercase text-white y2k-bubble-text-sm">
+  IDIOMAS
+</h3>
+<span class="text-2xl">🗣</span>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Idioma 1: Solid Vibrant Neon Pink / Magenta Fill -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center font-cyber font-bold text-xs uppercase">
+<span class="text-white">Español Nativo</span>
+<span class="text-primary font-pixel text-lg">100% ★</span>
+</div>
+<div class="w-full h-5 bg-black rounded-full p-0.5 border-2 border-white shadow-[2px_2px_0px_#000]">
+<div class="h-full bg-[#FF1493] rounded-full w-full shadow-[0_0_8px_#FF1493]"></div>
+</div>
+</div>
+<!-- Idioma 2 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center font-cyber font-bold text-xs uppercase">
+<span class="text-white">Inglés B1 (Acreditado · TecNM ITO)</span>
+<span class="text-secondary font-pixel text-lg">B1 ✦</span>
+</div>
+<div class="w-full h-5 bg-black rounded-full p-0.5 border-2 border-white shadow-[2px_2px_0px_#000]">
+<div class="h-full bg-[#f966ab] rounded-full w-[45%]"></div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm mt-space-xs bg-[#0e102c]/70 p-3 rounded-lg border border-white/10"><span class="material-symbols-outlined text-[#e21c70]">workspace_premium</span><div class="flex flex-col"><span class="font-cyber font-bold text-xs uppercase text-secondary">Certificación</span><span class="font-body-md text-body-md text-white">Google AI Essentials · Google (2025)</span></div></div>
+</div>
+</div>
+</section>
+<!-- Divider 2 (after Skills, before Proyectos Destacados): Star on the left with glowing trail shooting right -->
+<div class="w-full max-w-[1280px] mx-auto h-8 my-6 flex items-center justify-center relative overflow-visible select-none pointer-events-none">
+<svg class="w-full h-8 overflow-visible" fill="none" preserveaspectratio="none" viewbox="0 0 1200 40" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="trailGradRight2" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#ffffff"></stop>
+<stop offset="20%" stop-color="#FF1493" stop-opacity="1"></stop>
+<stop offset="65%" stop-color="#FF69B4" stop-opacity="0.75"></stop>
+<stop offset="100%" stop-color="#FF1493" stop-opacity="0.1"></stop>
+</lineargradient>
+<filter height="180%" id="pinkGlowLeft2" width="180%" x="-40%" y="-40%">
+<fedropshadow dx="0" dy="0" flood-color="#FF1493" flood-opacity="0.9" stddeviation="4"></fedropshadow>
+</filter>
+</defs>
+<path d="M 38 17.5 L 1200 19.5 L 1200 20.5 L 38 22.5 Z" fill="url(#trailGradRight2)"></path>
+<g filter="url(#pinkGlowLeft2)" transform="translate(24, 20)">
+<path d="M 0 -15 L 4.2 -4.2 L 15.5 -3 L 7 5.2 L 9.8 15.8 L 0 9.2 L -9.8 15.8 L -7 5.2 L -15.5 -3 L -4.2 -4.2 Z" fill="#ffffff" stroke="#FF1493" stroke-linejoin="round" stroke-width="2.5"></path>
+<circle cx="0" cy="0" fill="#FF1493" r="3"></circle>
+</g>
+</svg>
+</div>
+<!-- SECTION 2: PROYECTOS DESTACADOS (Showcase Portfolio Grid Styled as Fanzine Polaroids) -->
+<section class="flex flex-col gap-space-md" id="proyectos">
+<!-- Section Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="text-primary font-bold text-xl">✦</span>
+<span class="font-cyber font-bold text-xs text-secondary uppercase tracking-widest">GALERÍA DE CASOS</span>
+</div>
+<h2 class="font-bubble text-3xl sm:text-4xl text-white uppercase tracking-normal y2k-bubble-text-sm">
+  PROYECTOS DESTACADOS
+</h2>
+</div>
+<!-- Filter Pill Chips with Comic Buttons -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-space-sm py-1 bg-primary-container text-white rounded-lg font-bubble text-xs uppercase border-2 border-white shadow-[3px_3px_0px_#000] rotate-[-1deg]" id="projects-count">
+  TODOS [05]
+</span>
+</div>
+</div>
+<!-- Project cards: rendered from the PROJECTS list in the script at the bottom -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter items-stretch pt-3" id="projects-grid"></div>
+</section>
+<!-- Divider 3 (after Proyectos Destacados, before Mi Experiencia): Star on the right with glowing trail from the left -->
+<div class="w-full max-w-[1280px] mx-auto h-8 my-6 flex items-center justify-center relative overflow-visible select-none pointer-events-none">
+<svg class="w-full h-8 overflow-visible" fill="none" preserveaspectratio="none" viewbox="0 0 1200 40" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="trailGradLeft3" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#FF1493" stop-opacity="0.1"></stop>
+<stop offset="35%" stop-color="#FF69B4" stop-opacity="0.75"></stop>
+<stop offset="80%" stop-color="#FF1493" stop-opacity="1"></stop>
+<stop offset="100%" stop-color="#ffffff"></stop>
+</lineargradient>
+<filter height="180%" id="pinkGlowRight3" width="180%" x="-40%" y="-40%">
+<fedropshadow dx="0" dy="0" flood-color="#FF1493" flood-opacity="0.9" stddeviation="4"></fedropshadow>
+</filter>
+</defs>
+<path d="M 0 19.5 L 1162 17.5 L 1162 22.5 L 0 20.5 Z" fill="url(#trailGradLeft3)"></path>
+<g filter="url(#pinkGlowRight3)" transform="translate(1176, 20)">
+<path d="M 0 -15 L 4.2 -4.2 L 15.5 -3 L 7 5.2 L 9.8 15.8 L 0 9.2 L -9.8 15.8 L -7 5.2 L -15.5 -3 L -4.2 -4.2 Z" fill="#ffffff" stroke="#FF1493" stroke-linejoin="round" stroke-width="2.5"></path>
+<circle cx="0" cy="0" fill="#FF1493" r="3"></circle>
+</g>
+</svg>
+</div>
+<!-- SECTION 3: MI EXPERIENCIA (3-Column Retro Bento Cards with Y2K flair) -->
+<section class="flex flex-col gap-space-md" id="experiencia">
+<!-- Section Title Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-space-sm">
+<span class="w-4 h-4 bg-primary-container border-2 border-white shadow-[2px_2px_0px_#000] rotate-45"></span>
+<h2 class="font-bubble text-3xl sm:text-4xl text-white uppercase tracking-normal y2k-bubble-text-sm">
+  MI EXPERIENCIA
+</h2>
+</div>
+<span class="inline-block font-pixel text-lg text-secondary uppercase bg-[#141416] px-space-sm py-1 rounded border border-white/20 shadow-[2px_2px_0px_#000] self-start sm:self-auto">
+  HACKATONES / EXPERIENCIA ✧
+</span>
+</div>
+<!-- 3 Columns with slight alternating rotations & washi tape tags -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter items-stretch">
+<!-- Experience Card 1 -->
+<div class="bg-[#141416] rounded-2xl p-space-lg border-2 border-white shadow-[5px_5px_0px_#000000,7px_7px_0px_#e21c70] flex flex-col justify-between hover:translate-y-[-4px] transition-all relative rotate-[-1.5deg]">
+<!-- Card tape -->
+<div class="absolute -top-3 left-8 washi-tape w-20 h-5 rotate-[-3deg] border border-white/40"></div>
+<div>
+<div class="flex items-center justify-between mb-space-md pt-2">
+<div class="w-11 h-11 rounded-xl bg-primary-container border-2 border-white flex items-center justify-center font-bubble text-lg text-white shadow-[3px_3px_0px_#000] rotate-[-4deg]">
+  HT
+</div>
+<span class="px-space-xs py-0.5 bg-[#090b27] text-primary font-pixel text-base rounded border border-primary/40">
+  MAY 2026
+</span>
+</div>
+<h3 class="font-cyber font-extrabold text-xl text-primary uppercase">
+  Hackatec ITO 2026 · MappAche
+</h3>
+<p class="font-cyber font-bold text-sm text-white mb-space-xs">
+  TecNM • Instituto Tecnológico de Oaxaca
+</p>
+<p class="font-body-sm text-body-sm text-[#f966ab] mb-space-md italic">
+  App para reportar baches en Oaxaca
+</p>
+<ul class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-start gap-space-xs">
+<span class="text-primary font-bold shrink-0">✦</span>
+<span>Implementé el scraping de reportes ciudadanos con Python.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="text-primary font-bold shrink-0">✦</span>
+<span>Detección de golpes bruscos con los sensores del teléfono para sugerir reportes.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="text-primary font-bold shrink-0">✦</span>
+<span>Notificaciones de la app (Flutter, PostgreSQL).</span>
+</li>
+</ul>
+</div>
+<div class="mt-space-lg pt-space-sm flex flex-wrap gap-1.5 border-t border-white/10">
+<span class="px-2 py-0.5 bg-[#1f2142] rounded text-primary font-cyber text-xs font-bold border border-white/30 shadow-[1px_1px_0px_#000]">PYTHON</span>
+<span class="px-2 py-0.5 bg-[#1f2142] rounded text-primary font-cyber text-xs font-bold border border-white/30 shadow-[1px_1px_0px_#000]">FLUTTER</span>
+<span class="px-2 py-0.5 bg-[#1f2142] rounded text-primary font-cyber text-xs font-bold border border-white/30 shadow-[1px_1px_0px_#000]">POSTGRESQL</span>
+</div>
+</div>
+<!-- Experience Card 2 -->
+<div class="bg-[#141416] rounded-2xl p-space-lg border-2 border-white shadow-[5px_5px_0px_#000000,7px_7px_0px_#e21c70] flex flex-col justify-between hover:translate-y-[-4px] transition-all relative rotate-[1deg]">
+<!-- Card tape -->
+<div class="absolute -top-3 right-8 washi-tape-pink w-20 h-5 rotate-[4deg] border border-white/40"></div>
+<div>
+<div class="flex items-center justify-between mb-space-md pt-2">
+<div class="w-11 h-11 rounded-xl bg-secondary-container border-2 border-white flex items-center justify-center font-bubble text-lg text-white shadow-[3px_3px_0px_#000] rotate-[3deg]">
+  SM
+</div>
+<span class="px-space-xs py-0.5 bg-[#090b27] text-primary font-pixel text-base rounded border border-primary/40">
+  NOV 2026
+</span>
+</div>
+<h3 class="font-cyber font-extrabold text-xl text-primary uppercase">
+  Hackatón Jalisco SOLACYT 2026 · SIMORI
+</h3>
+<p class="font-cyber font-bold text-sm text-white mb-space-xs">
+  Reto 02 · Salud y Bienestar
+</p>
+<p class="font-body-sm text-body-sm text-[#f966ab] mb-space-md italic">
+  Sistema de Monitoreo Renal Infantil
+</p>
+<ul class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-start gap-space-xs">
+<span class="text-primary font-bold shrink-0">✦</span>
+<span>Colaboré en el frontend y el diseño UX de la app.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="text-primary font-bold shrink-0">✦</span>
+<span>Colaboré en el backend y la base de datos.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="text-primary font-bold shrink-0">✦</span>
+<span>Capacitación previa con diploma en validación de proyectos y pitch.</span>
+</li>
+</ul>
+</div>
+<div class="mt-space-lg pt-space-sm flex flex-wrap gap-1.5 border-t border-white/10">
+<span class="px-2 py-0.5 bg-[#1f2142] rounded text-primary font-cyber text-xs font-bold border border-white/30 shadow-[1px_1px_0px_#000]">SALUD</span>
+<span class="px-2 py-0.5 bg-[#1f2142] rounded text-primary font-cyber text-xs font-bold border border-white/30 shadow-[1px_1px_0px_#000]">FULL-STACK</span>
+<span class="px-2 py-0.5 bg-[#1f2142] rounded text-primary font-cyber text-xs font-bold border border-white/30 shadow-[1px_1px_0px_#000]">UX</span>
+</div>
+</div>
+<!-- Experience Card 3 -->
+<div class="bg-[#141416] rounded-2xl p-space-lg border-2 border-white shadow-[5px_5px_0px_#000000,7px_7px_0px_#e21c70] flex flex-col justify-between hover:translate-y-[-4px] transition-all relative rotate-[-1deg]">
+<!-- Card tape -->
+<div class="absolute -top-3 left-12 washi-tape w-20 h-5 rotate-[-2deg] border border-white/40"></div>
+<div>
+<div class="flex items-center justify-between mb-space-md pt-2">
+<div class="w-11 h-11 rounded-xl bg-primary-container border-2 border-white flex items-center justify-center font-bubble text-lg text-white shadow-[3px_3px_0px_#000] rotate-[-3deg]">
+  CF
+</div>
+<span class="px-space-xs py-0.5 bg-[#090b27] text-primary font-pixel text-base rounded border border-primary/40">
+  SEP 2026 – HOY
+</span>
+</div>
+<h3 class="font-cyber font-extrabold text-xl text-primary uppercase">
+  Crédito Fácil · Herramienta en uso real
+</h3>
+<p class="font-cyber font-bold text-sm text-white mb-space-xs">
+  Desarrolladora única
+</p>
+<p class="font-body-sm text-body-sm text-[#f966ab] mb-space-md italic">
+  Trámites de terminación de crédito ante CONDUSEF
+</p>
+<ul class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-start gap-space-xs">
+<span class="text-primary font-bold shrink-0">✦</span>
+<span>Extensión de Chrome que redujo el tiempo por caso de 1 h 30 min a menos de 20 min.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="text-primary font-bold shrink-0">✦</span>
+<span>22 casos atendidos en su primer mes y medio.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="text-primary font-bold shrink-0">✦</span>
+<span>OCR de documentos, cálculo de adeudos y generación de la queja en PDF y Word.</span>
+</li>
+</ul>
+</div>
+<div class="mt-space-lg pt-space-sm flex flex-wrap gap-1.5 border-t border-white/10">
+<span class="px-2 py-0.5 bg-[#1f2142] rounded text-primary font-cyber text-xs font-bold border border-white/30 shadow-[1px_1px_0px_#000]">JAVASCRIPT</span>
+<span class="px-2 py-0.5 bg-[#1f2142] rounded text-primary font-cyber text-xs font-bold border border-white/30 shadow-[1px_1px_0px_#000]">OCR</span>
+<span class="px-2 py-0.5 bg-[#1f2142] rounded text-primary font-cyber text-xs font-bold border border-white/30 shadow-[1px_1px_0px_#000]">USO REAL</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Divider 4 (after Mi Experiencia, before Contact): Star on the left with trail shooting right -->
+<div class="w-full max-w-[1280px] mx-auto h-8 my-6 flex items-center justify-center relative overflow-visible select-none pointer-events-none">
+<svg class="w-full h-8 overflow-visible" fill="none" preserveaspectratio="none" viewbox="0 0 1200 40" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="trailGradRight4" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#ffffff"></stop>
+<stop offset="20%" stop-color="#FF1493" stop-opacity="1"></stop>
+<stop offset="65%" stop-color="#FF69B4" stop-opacity="0.75"></stop>
+<stop offset="100%" stop-color="#FF1493" stop-opacity="0.1"></stop>
+</lineargradient>
+<filter height="180%" id="pinkGlowLeft4" width="180%" x="-40%" y="-40%">
+<fedropshadow dx="0" dy="0" flood-color="#FF1493" flood-opacity="0.9" stddeviation="4"></fedropshadow>
+</filter>
+</defs>
+<path d="M 38 17.5 L 1200 19.5 L 1200 20.5 L 38 22.5 Z" fill="url(#trailGradRight4)"></path>
+<g filter="url(#pinkGlowLeft4)" transform="translate(24, 20)">
+<path d="M 0 -15 L 4.2 -4.2 L 15.5 -3 L 7 5.2 L 9.8 15.8 L 0 9.2 L -9.8 15.8 L -7 5.2 L -15.5 -3 L -4.2 -4.2 Z" fill="#ffffff" stroke="#FF1493" stroke-linejoin="round" stroke-width="2.5"></path>
+<circle cx="0" cy="0" fill="#FF1493" r="3"></circle>
+</g>
+</svg>
+</div>
+<!-- 5. CONTACTO SECTION (Retro Inquiry Box with Die-Cut Silhouette) -->
+<section class="bg-[#141416] rounded-2xl p-space-lg sm:p-space-xl border-3 border-white shadow-[8px_8px_0px_#000000,11px_11px_0px_#e21c70] relative overflow-hidden" id="contacto" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAIVt01rxKTz1Oikonp0mlozuNsOQLiWtbZPODarlEhmyPAl0ZMSXlheCY6z0bR-xAoLcEdtA_WISY4v5HCI_0jT4DIqjkrwHcsbYafT3JHddA67WHoZVA4zYVbg7aSfZZnS8ON8o5t8KG-YaPoLSDgbpPYBCPbyELGjZo1YKpus2PAOK2i-HIafNJRQRmJAPIAXJmNYVUgDOT4cVd1etcYMGQS2uUGPNcP0_7Vv6QAEvyHH_ukN4bg05r0CZ_Y3Z_uF20'); background-size: cover; background-position: center center;">
+<div class="absolute inset-0 bg-[#080918]/90 pointer-events-none"></div>
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-white via-[#FF1493] to-white opacity-90 shadow-[0_0_8px_#FF1493]"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center relative z-10">
+<!-- Left Info & Badges (6 cols) -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-3.5 h-3.5 bg-primary-container border border-white shadow-[1px_1px_0px_#000] rotate-45"></span>
+<span class="font-cyber font-bold text-xs uppercase text-primary tracking-widest">CONTACT ZONE // 2026</span>
+</div>
+<h2 class="font-bubble text-3xl sm:text-4xl lg:text-5xl uppercase text-white leading-none y2k-bubble-text-sm">
+  ¿TIENES UN RETO CREATIVO? <span class="text-primary-container" style="-webkit-text-stroke: 3px #fff; text-shadow: 3px 3px 0px #fff, 5px 5px 0px #fff;">HABLEMOS!</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed bg-[#0e102c]/70 p-4 rounded-xl border border-white/10">
+  Abierta a colaboraciones, hackatones, proyectos de software o cualquier idea que combine tecnología y creatividad. Escríbeme y pongamos las ideas a rodar.
+</p>
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="font-cyber font-bold text-xs text-secondary uppercase w-20">EMAIL:</span>
+<a class="font-bubble text-lg text-primary hover:underline break-all" href="mailto:galileasantiagojimenez20@gmail.com">galileasantiagojimenez20@gmail.com</a>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-cyber font-bold text-xs text-secondary uppercase w-20">PHONE:</span>
+<a class="font-cyber font-bold text-base text-white hover:underline" href="tel:+529513197872">+52 951 319 7872</a>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-cyber font-bold text-xs text-secondary uppercase w-20">LOCATION:</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Oaxaca de Juárez, Oaxaca</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-sm flex-wrap">
+<span class="px-space-sm py-1 bg-[#1f2142] rounded-full text-white font-bubble text-xs uppercase border-2 border-white shadow-[2px_2px_0px_#000] rotate-[-2deg]">✦ RESPONDO RÁPIDO</span>
+<span class="px-space-sm py-1 bg-[#1f2142] rounded-full text-secondary font-bubble text-xs uppercase border-2 border-white shadow-[2px_2px_0px_#000] rotate-[1.5deg]">✦ HACKATONES</span>
+<span class="px-space-sm py-1 bg-primary-container rounded-full text-white font-bubble text-xs uppercase border-2 border-white shadow-[2px_2px_0px_#000] rotate-[-1deg]">✦ PRÁCTICAS / EMPLEO</span>
+</div>
+</div>
+<!-- Right Retro Interactive Form (6 cols) with Cyberpop Window style -->
+<div class="lg:col-span-6 bg-[#1a1c36] rounded-2xl p-space-lg border-3 border-white shadow-[6px_6px_0px_#000000,8px_8px_0px_#e21c70] relative rotate-[1deg]">
+<!-- Window header bar -->
+<div class="flex items-center justify-between pb-space-sm mb-space-md border-b-2 border-white/20">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-red-500 border border-black"></span>
+<span class="w-3 h-3 rounded-full bg-yellow-400 border border-black"></span>
+<span class="w-3 h-3 rounded-full bg-green-500 border border-black"></span>
+<span class="font-cyber font-extrabold text-xs uppercase text-primary ml-1">SEND MESSAGE TICKET</span>
+</div>
+<span class="text-xl text-secondary">✉</span>
+</div>
+<form class="flex flex-col gap-space-md" id="contact-form" novalidate>
+<input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off"/>
+<div>
+<label class="block font-cyber font-bold text-xs uppercase text-secondary mb-1">Tu Nombre o Empresa</label>
+<input class="w-full bg-[#0e102c] text-white px-space-md py-space-sm rounded-lg font-body-md text-body-md outline-none border-2 border-white/40 focus:border-primary-container placeholder:text-on-surface-variant/40 shadow-[3px_3px_0px_#000]" placeholder="Ej: Ana López / Equipo Hackatec" required="" type="text" name="nombre" id="cf-nombre" autocomplete="name"/>
+</div>
+<div>
+<label class="block font-cyber font-bold text-xs uppercase text-secondary mb-1">Tu Correo Electrónico</label>
+<input class="w-full bg-[#0e102c] text-white px-space-md py-space-sm rounded-lg font-body-md text-body-md outline-none border-2 border-white/40 focus:border-primary-container placeholder:text-on-surface-variant/40 shadow-[3px_3px_0px_#000]" placeholder="tu@email.com" required="" type="email" name="email" id="cf-email" autocomplete="email"/>
+</div>
+<div>
+<label class="block font-cyber font-bold text-xs uppercase text-secondary mb-1">Tipo de Proyecto</label>
+<select name="tipo" id="cf-tipo" class="w-full bg-[#0e102c] text-white px-space-md py-space-sm rounded-lg font-body-md text-body-md outline-none border-2 border-white/40 focus:border-primary-container shadow-[3px_3px_0px_#000]">
+<option>Invitación a hackatón / equipo</option>
+<option>Proyecto de software</option>
+<option>Oportunidad laboral / residencia profesional</option>
+<option>Otro</option>
+</select>
+</div>
+<div>
+<label class="block font-cyber font-bold text-xs uppercase text-secondary mb-1">Cuéntame los detalles</label>
+<textarea class="w-full bg-[#0e102c] text-white px-space-md py-space-sm rounded-lg font-body-md text-body-md outline-none border-2 border-white/40 focus:border-primary-container placeholder:text-on-surface-variant/40 resize-none shadow-[3px_3px_0px_#000]" placeholder="Cuéntame tu idea, objetivos, fechas y alcance..." required="" rows="3" name="mensaje" id="cf-mensaje"></textarea>
+</div>
+<button class="y2k-btn w-full py-3.5 bg-primary-container text-white font-bubble text-base uppercase rounded-xl border-2 border-white flex items-center justify-center gap-space-xs tracking-wider" type="submit">
+<span id="cf-btn-text">ENVIAR TICKET CREATIVO</span>
+<span class="text-lg">★</span>
+</button>
+<p aria-live="polite" class="hidden font-body-md text-body-md rounded-lg px-3 py-2 border-2" id="cf-status"></p>
+</form>
+</div>
+</div>
+</section>
+</div>
+</div></main>
+<!-- PROJECT CASE MODAL (opened from "VER CASO") -->
+<div aria-hidden="true" aria-modal="true" class="fixed inset-0 z-[60] hidden items-start justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-sm overflow-y-auto" id="project-modal" role="dialog">
+<div class="relative w-full max-w-4xl my-6 bg-[#141416] rounded-2xl border-3 border-white shadow-[8px_8px_0px_#000000,11px_11px_0px_#e21c70]">
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 washi-tape-pink w-28 h-6 rotate-[-2deg] border border-white/60 z-20"></div>
+<!-- Window bar -->
+<div class="flex items-center justify-between px-space-lg pt-space-lg pb-space-sm border-b-2 border-white/20">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-3 h-3 rounded-full bg-red-500 border border-black shrink-0"></span>
+<span class="w-3 h-3 rounded-full bg-yellow-400 border border-black shrink-0"></span>
+<span class="w-3 h-3 rounded-full bg-green-500 border border-black shrink-0"></span>
+<span class="font-pixel text-lg uppercase text-primary ml-1 truncate" id="pm-kicker">CASO</span>
+</div>
+<button aria-label="Cerrar" class="w-9 h-9 rounded-lg bg-primary-container text-white border-2 border-white shadow-[2px_2px_0px_#000] flex items-center justify-center hover:rotate-6 transition-transform" id="pm-close" type="button"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div class="p-space-lg flex flex-col gap-space-md">
+<div>
+<h3 class="font-bubble text-2xl sm:text-3xl uppercase text-white y2k-bubble-text-sm" id="pm-title"></h3>
+<p class="font-cyber font-bold text-sm text-secondary mt-1" id="pm-role"></p>
+</div>
+<!-- Video tabs + player -->
+<div class="flex flex-wrap gap-2" id="pm-tabs"></div>
+<div class="relative w-full bg-black rounded-xl border-2 border-white overflow-hidden shadow-[4px_4px_0px_#000]" id="pm-media"></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic" id="pm-caption"></p>
+<ul class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant" id="pm-points"></ul>
+<div class="flex flex-wrap gap-1.5" id="pm-stack"></div>
+<div class="flex flex-wrap gap-space-sm pt-space-xs" id="pm-links"></div>
+</div>
+</div>
+</div>
+
+<footer class="w-full bg-[#090b27] border-t-3 border-white mt-12 relative">
+<div class="max-w-[1280px] mx-auto px-margin py-space-xl flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs items-center md:items-start">
+<div class="flex items-center gap-space-sm">
+<span class="font-bubble text-2xl text-primary uppercase y2k-bubble-text-sm">&lt;/GALILEA&gt;</span>
+<span class="px-2 py-0.5 bg-primary-container text-white font-bubble text-xs rounded-full border border-white shadow-[2px_2px_0px_#000]">ONLINE ●</span>
+</div>
+<p class="font-cyber font-bold text-xs text-on-surface-variant">Gracias por visitar. Si llegaste hasta aquí, <a class="text-primary hover:underline" href="#contacto">hablemos</a>.</p>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-space-sm">
+<a class="px-space-md py-space-xs bg-[#171935] text-primary hover:bg-primary-container hover:text-white rounded-lg font-bubble text-xs uppercase border-2 border-white shadow-[2px_2px_0px_#000] rotate-[-1deg] transition-all" href="https://github.com/galileaCrazy" target="_blank">GitHub</a>
+<a class="px-space-md py-space-xs bg-[#171935] text-primary hover:bg-primary-container hover:text-white rounded-lg font-bubble text-xs uppercase border-2 border-white shadow-[2px_2px_0px_#000] rotate-[2deg] transition-all" href="https://www.linkedin.com/in/santiago-jimenez-galilea-a565742b8" target="_blank">LinkedIn</a>
+<a class="px-space-md py-space-xs bg-[#171935] text-primary hover:bg-primary-container hover:text-white rounded-lg font-bubble text-xs uppercase border-2 border-white shadow-[2px_2px_0px_#000] rotate-[-2deg] transition-all" href="https://instagram.com/galilea_crazy" target="_blank">Instagram</a>
+</div>
+<div class="font-pixel text-base text-on-surface-variant text-center md:text-right">
+  GALILEA JIMENEZ. HECHO CON ☕ Y ♥
+</div>
+</div>
+</footer>
+<script>
+// Habilidades: edit this list to add/remove skills.
+// level: 0-100 (bar width) · cat: frontend | backend | datos | herramientas | soft
+// icon: a devicon class (https://devicon.dev) or a Material Symbol name prefixed with "ms:"
+const SKILLS = [
+  { name: "React", cat: "frontend", level: 70, icon: "devicon-react-original colored", desc: "Componentes, hooks y SPAs" },
+  { name: "Next.js", cat: "frontend", level: 60, icon: "devicon-nextjs-plain", desc: "Apps full-stack, rutas y SSR" },
+  { name: "TypeScript", cat: "frontend", level: 60, icon: "devicon-typescript-plain colored", desc: "Tipado en frontend con Next.js" },
+  { name: "Tailwind CSS", cat: "frontend", level: 70, icon: "devicon-tailwindcss-original colored", desc: "Interfaces rápidas y responsivas" },
+  { name: "Java", cat: "backend", level: 85, icon: "devicon-java-plain colored", desc: "POO y lógica de negocio" },
+  { name: "Spring Boot", cat: "backend", level: 75, icon: "devicon-spring-original colored", desc: "APIs REST, JPA, Security, JWT, Flyway" },
+  { name: "FastAPI", cat: "backend", level: 65, icon: "devicon-fastapi-plain colored", desc: "Microservicio de IA con LLMs" },
+  { name: "Python", cat: "backend", level: 70, icon: "devicon-python-plain colored", desc: "Backend, scraping y pruebas con pytest" },
+  { name: "Laravel / PHP", cat: "backend", level: 55, icon: "devicon-laravel-original colored", desc: "Eloquent, Observers y Blade" },
+  { name: "Patrones de Diseño", cat: "backend", level: 70, icon: "ms:architecture", desc: "GoF, microservicios y Circuit Breaker" },
+  { name: "MySQL", cat: "datos", level: 80, icon: "devicon-mysql-original colored", desc: "Modelado y consultas SQL" },
+  { name: "PostgreSQL", cat: "datos", level: 75, icon: "devicon-postgresql-plain colored", desc: "Base de datos relacional" },
+  { name: "Git / GitHub", cat: "herramientas", level: 80, icon: "devicon-git-plain colored", desc: "Control de versiones y forks" },
+  { name: "Docker", cat: "herramientas", level: 65, icon: "devicon-docker-plain colored", desc: "Contenedores y Docker Compose" },
+  { name: "GitHub Actions", cat: "herramientas", level: 60, icon: "devicon-githubactions-plain colored", desc: "Integración continua" },
+  { name: "Pruebas", cat: "herramientas", level: 65, icon: "ms:verified", desc: "JUnit, Mockito y pytest" },
+  { name: "IA aplicada", cat: "herramientas", level: 65, icon: "ms:smart_toy", desc: "LLMs por API (Groq, Gemini) y OCR" },
+  { name: "Trabajo en Equipo", cat: "soft", level: 90, icon: "ms:groups", desc: "Colaboración y comunicación" },
+  { name: "Liderazgo", cat: "soft", level: 80, icon: "ms:military_tech", desc: "Organizar y guiar proyectos" },
+  { name: "Aprendizaje Constante", cat: "soft", level: 95, icon: "ms:auto_awesome", desc: "Siempre aprendiendo algo nuevo" },
+  { name: "Creatividad", cat: "soft", level: 90, icon: "ms:palette", desc: "Ideas originales y soluciones distintas" },
+  { name: "Adaptabilidad", cat: "soft", level: 85, icon: "ms:sync_alt", desc: "Me ajusto rápido a nuevos retos" },
+  { name: "Pensamiento Crítico", cat: "soft", level: 85, icon: "ms:psychology", desc: "Analizar problemas a fondo" },
+];
+const SKILL_COLORS = { frontend: "#FF1493", backend: "#f966ab", datos: "#ffb1c3", herramientas: "#ffffff", soft: "#e21c70" };
+
+function skillLevelLabel(level) {
+  if (level >= 90) return "Experto ★";
+  if (level >= 75) return "Avanzado ✦";
+  if (level >= 50) return "Intermedio";
+  return "Básico";
+}
+
+function renderSkills(filter) {
+  const grid = document.getElementById("skills-grid");
+  const list = filter === "todas" ? SKILLS : SKILLS.filter(s => s.cat === filter);
+  grid.innerHTML = list.map((s, i) => {
+    const color = SKILL_COLORS[s.cat];
+    const icon = s.icon.startsWith("ms:")
+      ? `<span class="material-symbols-outlined">${s.icon.slice(3)}</span>`
+      : `<i class="${s.icon}"></i>`;
+    return `
+<div class="skill-card" style="--skill-color:${color};animation-delay:${i * 40}ms">
+  <div class="flex items-center gap-3 mb-3">
+    <div class="skill-icon">${icon}</div>
+    <div class="min-w-0">
+      <h4 class="font-bubble text-lg uppercase text-white leading-tight">${s.name}</h4>
+      <span class="font-pixel text-base uppercase" style="color:${color}">${skillLevelLabel(s.level)}</span>
+    </div>
+  </div>
+  <div class="w-full h-4 bg-black rounded-full p-0.5 border-2 border-white shadow-[2px_2px_0px_#000] mb-2">
+    <div class="skill-bar-fill h-full rounded-full" data-level="${s.level}" style="background:${color};box-shadow:0 0 8px ${color}"></div>
+  </div>
+  <p class="font-body-sm text-body-sm text-on-surface-variant">${s.desc}</p>
+</div>`;
+  }).join("");
+  document.getElementById("skills-count").textContent = `${list.length} skills ✦`;
+  // Animate bars from 0 to their level
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    grid.querySelectorAll(".skill-bar-fill").forEach(bar => { bar.style.width = bar.dataset.level + "%"; });
+  }));
+}
+
+document.querySelectorAll("#skills-filters .skill-filter").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll("#skills-filters .skill-filter").forEach(b => b.classList.remove("is-active"));
+    btn.classList.add("is-active");
+    renderSkills(btn.dataset.filter);
+  });
+});
+renderSkills("todas");
+
+// Contacto card: center it in the space below the fixed header instead of pinning it to the top
+document.querySelectorAll('a[href="#contacto"]').forEach(link => {
+  link.addEventListener("click", e => {
+    const card = document.getElementById("contacto");
+    if (!card) return;
+    e.preventDefault();
+    const header = 80;
+    const free = window.innerHeight - header;
+    const rect = card.getBoundingClientRect();
+    const offset = rect.height < free ? header + (free - rect.height) / 2 : 110;
+    window.scrollTo({ top: window.scrollY + rect.top - offset, behavior: "smooth" });
+    history.replaceState(null, "", "#contacto");
+  });
+});
+
+// Proyectos: edit this list to add/remove projects (order = order on the page).
+// media: { type: "video", src, label } | { type: "youtube", id, label }. Empty list = "demo en preparación".
+// cover: image path, or omit to show a sticker-style placeholder with `icon` (Material Symbol).
+const PROJECTS = [
+  {
+    id: "cliniclick", num: "01", tag: "SALUD · FULL-STACK", tagClass: "bg-secondary-container", featured: true,
+    title: "CliniClick", period: "Feb 2026 – Actualidad",
+    role: "Fundadora y desarrolladora principal full-stack · Proyecto personal",
+    summary: "Plataforma de gestión de clínicas médicas con microservicios, IA para agendar citas y recordatorios por WhatsApp.",
+    label: "MICROSERVICIOS + IA",
+    cover: "assets/img/cliniclick.jpg",
+    media: [
+      { type: "video", src: "assets/videos/clinica_recorrido.mp4", label: "Recorrido completo", poster: "assets/img/cliniclick.jpg" },
+      { type: "video", src: "assets/videos/clinica_whatsapp.mp4", label: "Prueba real por WhatsApp", poster: "assets/img/cliniclick_wa.jpg" },
+    ],
+    points: [
+      "Arquitectura de microservicios: backend en Spring Boot (Spring Data JPA, migraciones con Flyway y documentación con Swagger), frontend en React y un microservicio de IA en FastAPI que asiste a pacientes en el agendado de citas mediante un LLM (Groq).",
+      "Autenticación JWT con firma RS256 y tolerancia a fallos entre servicios con Circuit Breaker (Resilience4j).",
+      "Recordatorios de citas y confirmación o cancelación por WhatsApp mediante webhooks, auditoría de operaciones y configuración multi-tenant por clínica.",
+      "96 pruebas automatizadas (JUnit, Mockito y pytest) ejecutadas en integración continua con GitHub Actions.",
+      "Backend, microservicio de IA y PostgreSQL contenedorizados con Docker y Docker Compose, desplegados en Railway.",
+    ],
+    stack: ["Java", "Spring Boot", "React", "FastAPI", "PostgreSQL", "Docker", "Railway"],
+    links: [],
+  },
+  {
+    id: "condusef", num: "02", tag: "USO REAL", tagClass: "bg-primary-container",
+    title: "Automatizador de quejas CONDUSEF", period: "Sep 2026 – Actualidad",
+    role: "Desarrolladora única · Herramienta en uso real para Crédito Fácil (compra de deuda)",
+    summary: "Extensión de Chrome que agiliza la solicitud de terminación de contratos de crédito: de 1 h 30 min a menos de 20 min por caso.",
+    label: "EXTENSIÓN DE CHROME",
+    icon: "description",
+    media: [],
+    points: [
+      "Reduce el tiempo por caso de 1 h 30 min a menos de 20 min; 22 casos atendidos en su primer mes y medio.",
+      "Extracción de datos de INE, talones de pago y cartas escaneadas con OCR (Tesseract.js y PDF.js), con validación y corrección automática de la CURP mediante su dígito verificador.",
+      "Cálculo de adeudos a partir de los créditos del talón y las tablas de cada financiera, y redacción de hechos y pretensiones con plantillas editables.",
+      "Persistencia local de casos con estados y generación de la queja en PDF y Word, sin recapturar datos tras la firma del cliente y llenando el formulario oficial en un clic.",
+    ],
+    stack: ["JavaScript", "Tesseract.js", "PDF.js", "pdf-lib", "Chrome Extensions"],
+    links: [],
+  },
+  {
+    id: "cursos", num: "03", tag: "WEB APP", tagClass: "bg-primary-container",
+    title: "Plataforma de Cursos", period: "Ago – Dic 2025 · Reconstrucción 2026",
+    role: "Proyecto académico individual · Diseño e Implementación de Software con Patrones",
+    summary: "Plataforma para publicar y consultar cursos, con una arquitectura organizada mediante patrones de diseño GoF.",
+    label: "PATRONES DE DISEÑO",
+    cover: "assets/img/cursos.jpg",
+    media: [
+      { type: "video", src: "assets/videos/cursos_04_flujo_completo.mp4", label: "Flujo completo", poster: "assets/img/cursos.jpg" },
+      { type: "video", src: "assets/videos/cursos_01_estudiante.mp4", label: "Estudiante" },
+      { type: "video", src: "assets/videos/cursos_02_profesor.mp4", label: "Profesor" },
+      { type: "video", src: "assets/videos/cursos_03_administrador.mp4", label: "Administrador" },
+    ],
+    points: [
+      "API REST en Spring Boot y frontend en Next.js, con una arquitectura organizada mediante patrones de diseño GoF.",
+      "Analicé cada requerimiento para elegir el patrón adecuado: Abstract Factory para tipos de curso, Builder para su construcción paso a paso, Prototype para duplicarlos, Singleton para la configuración global, Bridge para la interfaz por dispositivo y Facade como interfaz unificada.",
+      "Los patrones desacoplan componentes y reducen código repetido, haciendo el sistema más fácil de mantener y de extender con nuevos tipos de curso.",
+    ],
+    stack: ["Java 21", "Spring Boot 3", "Spring Data JPA", "Next.js", "TypeScript", "Tailwind CSS", "MySQL"],
+    links: [],
+  },
+  {
+    id: "simori", num: "04", tag: "HACKATÓN", tagClass: "bg-secondary-container",
+    title: "SIMORI", period: "Nov 2026",
+    role: "Hackatón Jalisco SOLACYT 2026 · Reto 02 Salud y Bienestar · Proyecto en equipo",
+    summary: "Sistema de Monitoreo Renal Infantil. Colaboré en el frontend, el diseño UX y el backend.",
+    label: "SALUD INFANTIL",
+    cover: "https://img.youtube.com/vi/LtU62syaeFg/hqdefault.jpg",
+    media: [
+      { type: "youtube", id: "LtU62syaeFg", label: "Presentación del proyecto" },
+    ],
+    points: [
+      "Proyecto presentado en el Hackatón Jalisco SOLACYT 2026, Reto 02: Salud y Bienestar.",
+      "Colaboré en el frontend de la app y en el diseño UX (flujos y paleta).",
+      "Colaboré en el backend y la base de datos del sistema.",
+    ],
+    stack: ["Frontend", "UX", "Backend", "Base de datos"],
+    links: [{ label: "Ver en YouTube", href: "https://youtu.be/LtU62syaeFg" }],
+  },
+  {
+    id: "hackzone", num: "05", tag: "EQUIPO", tagClass: "bg-primary-container",
+    title: "HackZone", period: "Nov – Dic 2025",
+    role: "Proyecto académico en equipo de 4 · Plataforma desplegada en producción",
+    summary: "Plataforma de concursos para desarrolladores. Desarrollé la mensajería grupal por equipos y más módulos.",
+    label: "LARAVEL",
+    icon: "forum",
+    media: [],
+    noMediaText: "Sin video por ahora: revisa el código en GitHub.",
+    points: [
+      "Módulo de mensajería grupal por equipos (modelos, migraciones, controlador y vista), con creación automática del chat de cada equipo al agregar integrantes mediante Observers de Eloquent.",
+      "Correo de bienvenida al registro, calendario de eventos del panel de administración y rediseño del reporte mensual.",
+    ],
+    stack: ["Laravel", "PHP", "MySQL", "Blade", "Docker"],
+    links: [{ label: "Repositorio", href: "https://github.com/AlexanderTorresCortes/Proyecto_HackZone" }],
+  },
+];
+
+const ROTATIONS = ["rotate-[-1.5deg]", "rotate-[2deg]", "rotate-[-2deg]", "rotate-[1.5deg]", "rotate-[-1deg]"];
+const esc = t => String(t).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+function projectCover(p) {
+  if (p.cover) {
+    return `<img class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" alt="Captura de ${esc(p.title)}" loading="lazy" src="${p.cover}"/>`;
+  }
+  return `<div class="w-full h-full checkerboard-strip-pink flex items-center justify-center">
+    <div class="bg-white border-2 border-black rounded-2xl px-5 py-4 shadow-[4px_4px_0px_#e21c70] rotate-[-4deg] flex flex-col items-center gap-1">
+      <span class="material-symbols-outlined text-[#e21c70]" style="font-size:3rem">${p.icon || "code"}</span>
+      <span class="font-bubble text-sm uppercase text-black">${esc(p.label)}</span>
+    </div></div>`;
+}
+
+function renderProjects() {
+  const grid = document.getElementById("projects-grid");
+  grid.innerHTML = PROJECTS.map((p, i) => {
+    const hasVideo = p.media.length > 0;
+    const badge = hasVideo
+      ? `<span class="absolute bottom-2 left-2 inline-flex items-center gap-1 bg-black/80 text-white px-2 py-0.5 rounded font-cyber text-[11px] font-bold uppercase border border-white/60"><span class="material-symbols-outlined" style="font-size:14px">play_circle</span>${p.media.length > 1 ? p.media.length + " videos" : "Video"}</span>`
+      : "";
+    return `
+<div class="${p.featured ? "lg:col-span-2" : ""} bg-[#141416] rounded-2xl overflow-visible border-3 border-white shadow-[6px_6px_0px_#000000,9px_9px_0px_#e21c70] flex flex-col justify-between group ${ROTATIONS[i % ROTATIONS.length]} hover:rotate-0 hover:translate-y-[-4px] transition-all duration-300 relative">
+  <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 ${i % 2 ? "washi-tape-pink" : "washi-tape"} w-24 h-5 rotate-[-2deg] border border-white/50 z-20"></div>
+  <button class="p-3 bg-white rounded-t-xl text-left" data-project="${p.id}" type="button" aria-label="Ver caso ${esc(p.title)}">
+    <div class="relative w-full h-56 ${p.featured ? "lg:h-64" : ""} bg-black overflow-hidden rounded-lg border-2 border-black">
+      ${projectCover(p)}
+      <div class="absolute top-2 left-2 ${p.tagClass} text-white px-2 py-0.5 rounded font-bubble text-[11px] uppercase border border-white shadow-[2px_2px_0px_#000]">${esc(p.tag)}</div>
+      <div class="absolute top-2 right-2 bg-black text-primary px-2 py-0.5 rounded font-pixel text-base border border-white/40">#${p.num}</div>
+      ${badge}
+    </div>
+  </button>
+  <div class="p-space-md flex flex-col justify-between flex-grow">
+    <div>
+      <span class="font-pixel text-base text-secondary uppercase">${esc(p.period)}</span>
+      <h3 class="font-bubble text-xl uppercase text-white group-hover:text-primary transition-colors">${esc(p.title)}</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant mt-1 line-clamp-3">${esc(p.summary)}</p>
+    </div>
+    <div class="mt-space-md pt-space-xs flex items-center justify-between gap-2 border-t border-white/10">
+      <span class="font-cyber font-bold text-xs text-secondary uppercase">${esc(p.label)}</span>
+      <button class="shrink-0 px-space-sm py-1 bg-[#1f2142] hover:bg-primary-container text-white rounded font-bubble text-xs uppercase border-2 border-white shadow-[2px_2px_0px_#000] transition-all" data-project="${p.id}" type="button">VER CASO ➔</button>
+    </div>
+  </div>
+</div>`;
+  }).join("");
+  document.getElementById("projects-count").textContent = `TODOS [${String(PROJECTS.length).padStart(2, "0")}]`;
+  grid.querySelectorAll("[data-project]").forEach(el => el.addEventListener("click", () => openProject(el.dataset.project)));
+}
+
+const modal = document.getElementById("project-modal");
+let lastFocus = null;
+
+function showMedia(p, idx) {
+  const box = document.getElementById("pm-media");
+  const m = p.media[idx];
+  document.querySelectorAll("#pm-tabs button").forEach((b, i) => b.classList.toggle("is-active", i === idx));
+  if (!m) {
+    box.innerHTML = `<div class="aspect-video checkerboard-strip-pink flex items-center justify-center p-4">
+      <div class="bg-white border-2 border-black rounded-2xl px-6 py-5 shadow-[4px_4px_0px_#e21c70] rotate-[-2deg] text-center max-w-sm">
+        <span class="material-symbols-outlined text-[#e21c70]" style="font-size:2.75rem">${p.icon || "movie"}</span>
+        <p class="font-bubble text-lg uppercase text-black">${p.noMediaText ? "Código disponible" : "Demo en preparación"}</p>
+        <p class="font-body-sm text-body-sm text-black/70 mt-1">${esc(p.noMediaText || "Estoy grabando una demo con datos de prueba. Mientras, aquí tienes lo que hace.")}</p>
+      </div></div>`;
+    return;
+  }
+  if (m.type === "youtube") {
+    box.innerHTML = `<div class="aspect-video"><iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/${m.id}?rel=0" title="${esc(p.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>`;
+  } else {
+    box.innerHTML = `<video class="w-full aspect-video bg-black" controls playsinline preload="metadata" ${m.poster ? `poster="${m.poster}"` : ""} src="${m.src}"></video>`;
+  }
+  document.getElementById("pm-caption").textContent = p.media.length > 1 ? `Video ${idx + 1} de ${p.media.length}: ${m.label}` : "";
+}
+
+function openProject(id) {
+  const p = PROJECTS.find(x => x.id === id);
+  if (!p) return;
+  lastFocus = document.activeElement;
+  document.getElementById("pm-kicker").textContent = `CASO #${p.num} · ${p.period}`;
+  document.getElementById("pm-title").textContent = p.title;
+  document.getElementById("pm-role").textContent = p.role;
+  document.getElementById("pm-caption").textContent = "";
+  document.getElementById("pm-tabs").innerHTML = p.media.length > 1
+    ? p.media.map((m, i) => `<button class="skill-filter" data-idx="${i}" type="button"><span class="material-symbols-outlined">play_arrow</span>${esc(m.label)}</button>`).join("")
+    : "";
+  document.querySelectorAll("#pm-tabs button").forEach(b => b.addEventListener("click", () => showMedia(p, +b.dataset.idx)));
+  document.getElementById("pm-points").innerHTML = p.points.map(t => `<li class="flex items-start gap-space-xs"><span class="text-primary font-bold shrink-0">✦</span><span>${esc(t)}</span></li>`).join("");
+  document.getElementById("pm-stack").innerHTML = p.stack.map(t => `<span class="px-2 py-0.5 bg-[#1f2142] rounded text-primary font-cyber text-xs font-bold border border-white/30 shadow-[1px_1px_0px_#000] uppercase">${esc(t)}</span>`).join("");
+  document.getElementById("pm-links").innerHTML = p.links.map(l => `<a class="y2k-btn inline-flex items-center gap-space-xs bg-primary-container text-white px-space-md py-2 rounded-xl font-bubble text-sm uppercase border-2 border-white" href="${l.href}" target="_blank" rel="noopener">${esc(l.label)} ➔</a>`).join("");
+  showMedia(p, 0);
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+  document.getElementById("pm-close").focus();
+}
+
+function closeProject() {
+  document.getElementById("pm-media").innerHTML = ""; // stops video/YouTube playback
+  modal.classList.add("hidden");
+  modal.classList.remove("flex");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+  if (lastFocus) lastFocus.focus();
+}
+
+document.getElementById("pm-close").addEventListener("click", closeProject);
+modal.addEventListener("click", e => { if (e.target === modal) closeProject(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !modal.classList.contains("hidden")) closeProject(); });
+renderProjects();
+
+
+// Contacto: sends the form to Galilea's inbox via FormSubmit (no backend needed).
+// First message ever triggers a one-time activation email from FormSubmit to this address.
+const CONTACT_EMAIL = "galileasantiagojimenez20@gmail.com";
+const form = document.getElementById("contact-form");
+const statusEl = document.getElementById("cf-status");
+const btnText = document.getElementById("cf-btn-text");
+const btn = form.querySelector('button[type="submit"]');
+
+function setStatus(msg, ok) {
+  statusEl.innerHTML = msg;
+  statusEl.className = "font-body-md text-body-md rounded-lg px-3 py-2 border-2 " +
+    (ok ? "bg-[#0e102c] border-[#f966ab] text-white" : "bg-[#3a0a1e] border-red-400 text-white");
+}
+function mailtoLink(d) {
+  const subject = `[Portafolio] ${d.tipo} — ${d.nombre}`;
+  const body = `${d.mensaje}\n\n— ${d.nombre} (${d.email})`;
+  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  if (form._honey.value) return; // bot
+  const d = {
+    nombre: form.nombre.value.trim(), email: form.email.value.trim(),
+    tipo: form.tipo.value, mensaje: form.mensaje.value.trim(),
+  };
+  if (!d.nombre || !d.mensaje || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) {
+    setStatus("Completa tu nombre, un correo válido y el mensaje ✦", false);
+    (!d.nombre ? form.nombre : !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email) ? form.email : form.mensaje).focus();
+    return;
+  }
+  btn.disabled = true; btn.classList.add("opacity-70");
+  btnText.textContent = "ENVIANDO...";
+  try {
+    const res = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        ...d,
+        _subject: `[Portafolio] ${d.tipo} — ${d.nombre}`,
+        _replyto: d.email,
+        _template: "table",
+        _captcha: "false",
+      }),
+    });
+    const out = await res.json().catch(() => ({}));
+    if (!res.ok || String(out.success) === "false") throw new Error(out.message || res.status);
+    form.reset();
+    setStatus("¡Mensaje enviado! ★ Te respondo pronto a tu correo.", true);
+  } catch (err) {
+    setStatus(`No se pudo enviar desde aquí. <a class="underline text-primary font-bold" href="${mailtoLink(d)}">Ábrelo en tu correo ➔</a> o escríbeme a <a class="underline" href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>.`, false);
+  } finally {
+    btn.disabled = false; btn.classList.remove("opacity-70");
+    btnText.textContent = "ENVIAR TICKET CREATIVO";
+  }
+});
+
+// "¡CONTRÁTAME!" preselects the job/residencia option and focuses the name field
+document.querySelectorAll('a[data-hire]').forEach(a => a.addEventListener("click", () => {
+  form.tipo.value = "Oportunidad laboral / residencia profesional";
+  setTimeout(() => form.nombre.focus({ preventScroll: true }), 600);
+}));
+</script>
+</body></html>
